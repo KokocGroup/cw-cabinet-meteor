@@ -1,0 +1,25 @@
+<template name="TaskAdd">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{# autoForm collection="Tasks" id="TaskInsertForm" type="insert"}}
+                {{#each afFieldNames omitFields="createDate"}}
+                    {{> afQuickField name=this}}
+                {{/each}}
+                <button type="submit" class="btn btn-primary">Добавить</button>
+            {{/autoForm}}
+        </div>
+    </div>
+</template>
+
+<template name="TaskEdit">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{# autoForm collection="Tasks" id="TaskEditForm" type="update" doc=this}}
+                {{#each afFieldNames}}
+                    {{> afQuickField name=this}}
+                {{/each}}
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            {{/autoForm}}
+        </div>
+    </div>
+</template>

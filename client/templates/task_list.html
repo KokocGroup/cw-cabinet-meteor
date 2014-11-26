@@ -1,0 +1,10 @@
+<template name="TaskList">
+    <a href="{{pathFor "task.add"}}">Добавить</a><br>
+    <ul>
+        {{#each tasks}}
+            <li>
+                <a href="{{pathFor "task.show"}}">{{title}}</a> - <a href="{{pathFor "task.edit"}}">редактировать</a>
+            </li>
+        {{/each}}
+    </ul>
+</template>
